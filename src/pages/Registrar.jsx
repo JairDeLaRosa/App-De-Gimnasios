@@ -9,7 +9,7 @@ export const Registrar = () => {
   return (
     <>
       <div className="container-registrar">
-        <div className="opciones">
+        <div className="opciones animate__animated animate__animated animate__fadeIn">
           <h2 className="title">REGISTRAR COMO</h2>
           <div className="buttons">
             <button type="button" className="btn btn-light btn2" onClick={RegistroUsuarioComun}>

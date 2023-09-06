@@ -6,7 +6,7 @@ export const Login = () => {
   return (
     <>
       <div className="container-principal">
-        <form className="formLogin">
+        <form className="formLogin animate__animated animate__bounceInUp">
         <h2 className="title">Inicio de sesión</h2>
 
           <div class="mb-3">
@@ -27,7 +27,7 @@ export const Login = () => {
             />
           </div>
           <div class="mb-3 register">
-            <span>¿Eres nuevo?</span>
+            <label>¿Eres nuevo?</label>
             <Link className="d-inline-block" to={"/registro"}>
               Registrarse
             </Link>
