@@ -1,7 +1,7 @@
 .contenedor-formulario{
     display: flex;
     flex-direction: column;
-    width: 800px;
+    width: 1100px;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 50px;
@@ -40,4 +40,21 @@
 span{
     position: absolute;
     font-size: 12px;
+}
+label{
+    font-size: 15px;
+}
+.next{
+    margin-left: 157px;
+}
+small{
+    font-size: 15px;
+    color: rgb(255, 153, 0);
+}
+img{
+    border-radius: 50%;
+    width: 100px;
+}
+.file{
+    margin-left: 30%;
 }

@@ -13,7 +13,7 @@ export const Registrar = () => {
           <h2 className="title">REGISTRAR COMO</h2>
           <div className="buttons">
             <button type="button" className="btn btn-light btn2" onClick={RegistroUsuarioComun}>
-              USUARIO COMÚN
+              CLIENTES
             </button>
             <button type="button" className="btn btn-light btn2" onClick={RegistroEntrenador}>
               ENTRENADOR

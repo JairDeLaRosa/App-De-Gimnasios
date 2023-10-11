@@ -2,9 +2,9 @@ import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import {Login} from './../pages/Login'
 import { Registrar } from '../pages/Registrar'
-import { RegistroEntrenador } from './../pages/registros/RegistroEntrenador'
-import { RegistroUsuarioComun } from './../pages/registros/RegistroUsuarioComun'
-import { RegistroGerenteDeGym } from './../pages/registros/RegistroGerenteDeGym'
+import { RegistroEntrenador } from '../pages/registros/registroDeEntrenadores/RegistroEntrenador'
+import { RegistroUsuarioComun } from '../pages/registros/registrosClientes/RegistroUsuarioComun'
+import { RegistroGerenteDeGym } from '../pages/registros/registroDeAdministradores/RegistroGerenteDeGym'
 
 
 export const RoutesApp = () => {
