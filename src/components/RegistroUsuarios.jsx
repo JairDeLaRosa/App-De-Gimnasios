@@ -13,7 +13,10 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
       } = useForm();
 
       const custonSubmit = (d) => {
-        data(d)
+        data({
+          ...d,
+          TipoUsuario: tipoRegistro
+        })
       };
 
   return (
@@ -24,13 +27,13 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
           <div class="row">
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Enter Nambers
+                Nombres
               </label>
               <input
                 type="text"
                 class="form-control"
-                placeholder="nambers"
-                {...register("nambers", {
+                placeholder="nombres"
+                {...register("Nombres", {
                   required: {
                     value: true,
                     message: 'Este campo no puede estar vacio'
@@ -41,17 +44,17 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
                   }
                 })}
               />
-              {errors.nambers && <small>{errors.nambers.message}</small>}
+              {errors.Nombres && <small>{errors.Nombres.message}</small>}
             </div>
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Enter surnames
+                Apellidos
               </label>
               <input
                 type="text"
                 class="form-control"
-                placeholder="surnames"
-                {...register("surnames", {
+                placeholder="Apellidos"
+                {...register("Apellidos", {
                   required: {
                     value: true,
                     message: 'Este campo no puede estar vacio'
@@ -62,18 +65,18 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
                   }
                 })}
               />
-              {errors.surnames &&(<small>{errors.surnames.message}</small>)}
+              {errors.Apellidos &&(<small>{errors.Apellidos.message}</small>)}
             </div>
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Enter phone number
+                Celular
               </label>
               <input
                 type="number"
                 class="form-control"
-                placeholder="Example: 3008021***"
+                placeholder="Ejemplo: 3008021***"
                 aria-label="name"
-                {...register('phoneNumber',{
+                {...register('Celular',{
                   required:{
                     value: true,
                     message: 'Este campo no puede estar vacio'
@@ -84,7 +87,7 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
                   }
                 })}
               />
-              {errors.phoneNumber && <small>{errors.phoneNumber.message}</small>}
+              {errors.Celular && <small>{errors.Celular.message}</small>}
             </div>
             
           </div>
@@ -94,14 +97,14 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
           <div class="row">
           <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Email address
+                Correo
               </label>
               <input
                 type="email"
                 class="form-control"
                 id="exampleFormControlInput1"
                 placeholder="name@example.com"
-                {...register("email", {
+                {...register("Correo", {
                   required: {
                     value: true,
                     message: 'Este campo no puede estar vacio'
@@ -112,18 +115,18 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
                   }
                 })}
               />
-              {errors.email && <small>{errors.email.message}</small>}
+              {errors.Correo && <small>{errors.Correo.message}</small>}
             </div>
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Enter password between 6 and 20 characters
+                Contraseña entre 6 y 20 caracteres
               </label>
               <input
                 type="password"
                 class="form-control"
-                placeholder="password"
+                placeholder="Contraseña"
                 aria-label="name"
-                {...register('password',{
+                {...register('Contraseña',{
                   required: {
                     value: true,
                     message: 'Este campo no puede estar vacio'
@@ -134,28 +137,28 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
                   },
                 })}
               />
-              {errors.password && (<small>{errors.password.message}</small>)}
+              {errors.Contraseña && (<small>{errors.Contraseña.message}</small>)}
             </div>
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Confirm password
+                Confirmar contraseña
               </label>
               <input
                 type="password"
                 class="form-control"
-                placeholder="password"
+                placeholder="Contraseña"
                 aria-label="name"
-                {...register('confirmPassword',{
+                {...register('ConfirmarContraseña',{
                   required: {
                     value: true,
                     message: 'Este campo no puede estar vacio'
                   },
                   validate: (data)=>{
-                    return data==watch("password") || "No coinciden"
+                    return data==watch("Contraseña") || "No coinciden"
                   }
                 })}             
                  />
-              {errors.confirmPassword&&(<small>{errors.confirmPassword.message}</small>) }
+              {errors.ConfirmarContraseña&&(<small>{errors.ConfirmarContraseña.message}</small>) }
             </div>
           </div>
 
@@ -163,32 +166,32 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
           <div class="row">
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Enter age
+                Edad
               </label>
               <input
                 type="number"
                 class="form-control"
-                placeholder="age"
+                placeholder="Edad"
                 aria-label="name"
-                {...register('age',{
+                {...register('Edad',{
                   required: {
                     value: true,
                     message: 'Este campo no puede estar vacio'
                   }
                 })}
               />
-              {errors.age && <small>{errors.age.message}</small>}
+              {errors.Edad && <small>{errors.Edad.message}</small>}
             </div>
             <div class="col">
               <label for="exampleFormControlInput1" class="form-label">
-                Enter identification
+                Cedula
               </label>
               <input
                 type="number"
                 class="form-control"
                 placeholder="Identification"
                 aria-label="name"
-                {...register('identification',{
+                {...register('Cedula',{
                   required:{
                     value: true,
                     message: 'Este campo no puede estar vacio'
@@ -199,7 +202,7 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
                   }
                 })}
               />
-              {errors.identification && <small>{errors.identification.message}</small>}
+              {errors.Cedula && <small>{errors.Cedula.message}</small>}
             </div>
             <div class="col submit">
               <br />

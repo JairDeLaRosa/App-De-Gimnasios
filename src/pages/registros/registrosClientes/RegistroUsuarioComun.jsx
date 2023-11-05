@@ -1,12 +1,45 @@
 import { useState } from "react";
 import { RegistroUsuarios } from "./../../../components/RegistroUsuarios";
 import "./../../../css/registroUsuarioComun.css";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export const RegistroUsuarioComun = () => {
-  const [data, setData] = useState();
+  const navigate=useNavigate()
+  const nagigateLogin=()=> navigate('/login')
+  const [dataUsuario, setDataUsuario] = useState();
+  const [dataCliente, setDataCliente] = useState();
+
   const [display1, setDisplay1] = useState("");
   const [display2, setDisplay2] = useState("d-none");
-  const register = (d) => {
-    setData(d);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const custonSubmit = (d) => {
+    // Peso: d.peso,
+    // Altura: d.Altura})
+    console.log(dataUsuario);
+    axios
+      .post("http://localhost:8080/api/usuarios/create", dataUsuario)
+      .then(function (respuesta) {
+        console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
+        // Aquí puedes manejar la respuesta del servidor
+        alert("Usuario registrado")
+        nagigateLogin()
+      })
+      .catch(function (error) {
+        console.error("Error al realizar la solicitud:", error);
+        // Manejo de errores en caso de que la solicitud falle
+        alert("Ocurrió un error, intenta de nuevo")
+
+      });
+  };
+
+  const registerData = (d) => {
+    setDataUsuario(d);
     setDisplay1("d-none");
     setDisplay2("");
   };
@@ -14,7 +47,7 @@ export const RegistroUsuarioComun = () => {
     <>
       <div className="container-registrar">
         <div className={display1}>
-          <RegistroUsuarios tipoRegistro={"Clientes"} data={register} />
+          <RegistroUsuarios tipoRegistro={"Cliente"} data={registerData} />
         </div>
         <div className={display2}>
           <div className="contenedor-formulario animate__animated animate__fadeIn">
@@ -27,46 +60,56 @@ export const RegistroUsuarioComun = () => {
               alt="FotoPerfil"
             />
             <br />
-            <form >
+            <form onSubmit={handleSubmit(custonSubmit)}>
               <div className="row">
-              <input type="file" className="file"/>
+                <input type="file" className="file" />
               </div>
               <br />
-           <div className="row">
-           <div class="col">
-              <label for="exampleFormControlInput1" class="form-label">
-                Enter weight
-              </label>
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Weight"
-                aria-label="name"
-                step={0.01}
-              />
-            </div>
-            <div class="col">
-              <label for="exampleFormControlInput1" class="form-label">
-                Enter height
-              </label>
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Height"
-                aria-label="name"
-                step={0.01}
-              />
-            </div>
-            <div class="col">
-              <br />
-              <button type="submit" class="btn btn-primary mt-2">
-                Register
-              </button>
-            </div>
-           </div>
+              <div className="row">
+                <div class="col">
+                  <label for="exampleFormControlInput1" class="form-label">
+                    Enter weight
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Weight"
+                    aria-label="name"
+                    step={0.01}
+                    {...register("peso", {
+                      required: {
+                        value: true,
+                        message: "Este campo no puede estar vacio",
+                      },
+                    })}
+                  />
+                </div>
+                <div class="col">
+                  <label for="exampleFormControlInput1" class="form-label">
+                    Enter height
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Height"
+                    aria-label="name"
+                    step={0.01}
+                    {...register("Altura", {
+                      required: {
+                        value: true,
+                        message: "Este campo no puede estar vacio",
+                      },
+                    })}
+                  />
+                </div>
+                <div class="col">
+                  <br />
+                  <button type="submit" class="btn btn-primary mt-2">
+                    Register
+                  </button>
+                </div>
+              </div>
             </form>
-              
-            
           </div>
         </div>
       </div>

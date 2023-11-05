@@ -1,0 +1,30 @@
+.container-menu-cliente{
+    background-image: url('./../img/Imagen_fondo5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-menu-ver{
+    background-image: url('./../img/Imagen_fondo5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    width: 60px;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
