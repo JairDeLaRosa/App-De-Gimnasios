@@ -9,6 +9,8 @@ import { MenuDeClientes } from '../pages/menus/menusClientes/MenuDeClientes'
 import { MenuDeEntrenador } from '../pages/menus/menusEntrenadores/MenuDeEntrenador'
 import { MenuDeGimnasios } from '../pages/menus/menusGimnasios/MenuDeGimnasios'
 import { VerGimnasios } from '../pages/menus/menusClientes/VerGimnasios'
+import { PerfilDeCliente } from '../pages/menus/menusClientes/PerfilDeCliente'
+import { VerEntrenadores } from '../pages/menus/menusClientes/VerEntrenadores'
 
 
 export const RoutesApp = () => {
@@ -21,8 +23,12 @@ export const RoutesApp = () => {
 
         <Route path='cliente' element={<MenuDeClientes/>}/>
         <Route path='cliente/verGimnasios' element={<VerGimnasios/>}/>
+        <Route path='cliente/verEntrenadores' element={<VerEntrenadores/>}/>        
+        <Route path='cliente/perfilDeCliente' element={<PerfilDeCliente/>}/>
+        
 
         <Route path='entrenador' element={<MenuDeEntrenador/>}/>
+        
         <Route path='gimnasio' element={<MenuDeGimnasios/>}/>
 
         <Route path='login' element={<Login/>}/>

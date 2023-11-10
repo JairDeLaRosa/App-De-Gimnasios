@@ -17,8 +17,6 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    display: flex;
-    flex-direction: column;
 }
 .logo{
     width: 60px;
@@ -27,4 +25,59 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.styleCard{
+    width: 400px;
+}
+.navbar{
+    z-index: 100;
+}
+.container-cards{
+    width: 100%;
+}
+.actions{
+    font-size: 14px;
+    margin-left: -67px;
+}
+.imagePerfil{
+    width: 400px;
+}
+.containerEntrenadores{
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 420px;
+    top: 100px;
+    width: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerGimnasios{
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 870px;
+    top: 100px;
+    width: 470px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.posicion{
+    position: absolute;
+    top: 100px;
+    left: 450px;
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
