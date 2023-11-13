@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar } from '../../../components/NavBar'
+import { NavBarVerEntrenadores } from '../../../components/NavBarVerEntrenadores' 
 import { CardEntrenadores } from '../../../components/CardEntrenadores'
 
 export const VerEntrenadores = () => {
@@ -11,7 +11,7 @@ export const VerEntrenadores = () => {
     <>
     <div className="container-menu-ver">
     </div>
-    <NavBar/>
+    <NavBarVerEntrenadores/>
 
     <div className='container-cards row rows-cols-1 row-cols-md-3'>
         {/* <h2>Gimnasios registrados</h2> */}

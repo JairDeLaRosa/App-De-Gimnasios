@@ -60,7 +60,7 @@ export const RegistroEntrenador = () => {
             <br />
             <form onSubmit={handleSubmit(custonSubmit)}>
               <div className="row">
-                <input type="file" className="file" />
+              <input class="form-control file" type="file" id="formFile"/>
               </div>
               <br />
               <div className="row">
@@ -99,7 +99,7 @@ export const RegistroEntrenador = () => {
                 <div class="col">
                   <br />
                   <button type="submit" class="btn btn-primary mt-2">
-                    Register
+                    Registrar
                   </button>
                 </div>
               </div>

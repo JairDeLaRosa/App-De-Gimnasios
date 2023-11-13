@@ -81,3 +81,13 @@
     align-items: center;
     flex-direction: column;
 }
+.pagar{
+    background-color: white;
+    height: 40px;
+    border-radius: 5px;
+    color: black;
+}
+.pagar p{
+    padding-left: 10px;
+    padding-top: 7px;
+}

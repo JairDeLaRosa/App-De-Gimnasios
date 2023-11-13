@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 export const MenuDeClientes = () => {
   const navigate=useNavigate()
-  const RegistroUsuarioComun=()=>navigate('/registroUsuarioComun')
-  const RegistroEntrenador=()=>navigate('/registroEntrenador')
+  const VerPerfil=()=>navigate('/cliente/perfilDeCliente')
+  const VerEntrenadores=()=>navigate('/cliente/verEntrenadores')
   const VerGimnasios=()=>navigate('/cliente/verGimnasios')
 return (
   <>
@@ -16,13 +16,13 @@ return (
         <h3 className='title'>Elige una opción</h3>
         <br />
         <div className="buttons">
-          <button type="button" className="btn btn-light btn2" onClick={RegistroUsuarioComun}>
+          <button type="button" className="btn btn-light btn2" onClick={VerEntrenadores}>
             VER ENTRENADORES
           </button>
           <button type="button" className="btn btn-light btn2" onClick={VerGimnasios}>
             VER GIMNASIOS
           </button>
-          <button type="button" className="btn btn-light btn2" onClick={VerGimnasios}>
+          <button type="button" className="btn btn-light btn2" onClick={VerPerfil}>
             VER PERFIL
           </button>
         </div>

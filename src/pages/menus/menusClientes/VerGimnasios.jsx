@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar } from '../../../components/NavBar'
+import { NavBarVerGimnasios } from '../../../components/NavBarVerGimnasios'
 import { CardGimnasio } from '../../../components/CardGimnasio'
 import '../../../css/menus.css'
 
@@ -12,9 +12,9 @@ export const VerGimnasios = () => {
     <>
     <div className="container-menu-ver">
     </div>
-    <NavBar/>
+    <NavBarVerGimnasios/>
 
-    <div className='container-cards row rows-cols-1 row-cols-md-2'>
+    <div className='container-cards row rows-cols-1 row-cols-md-3'>
         {/* <h2>Gimnasios registrados</h2> */}
             {elementosRenderizados}
         

@@ -1,19 +1,18 @@
 import React from "react";
-import miImagen from '../img/logo.png'
+import miImagen from "../img/logo.png";
 import { Link } from "react-router-dom";
 
-export const NavBar = () => {
+export const NavBarVerEntrenadores = () => {
   return (
-    
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div className="d-flex">
-            <a class="navbar-brand" href="#">
-            <img className="logo" src={miImagen} alt="logo"/>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div className="d-flex">
+          <Link class="navbar-brand" to="/cliente">
+            <img className="logo" src={miImagen} alt="logo" />
             Fit life web
-          </a>
+          </Link>
           <div className="search">
-          <form class="d-flex">
+            <form class="d-flex">
               <input
                 class="form-control me-2"
                 type="search"
@@ -25,15 +24,18 @@ export const NavBar = () => {
               </button>
             </form>
           </div>
-          
-            </div>
-         
-            <div><div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+        </div>
+
+        <div>
+          <div
+            class="collapse navbar-collapse d-flex"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" aria-current="page" to="/cliente/verEntrenadores">
                   Inicio
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
                 <Link class="nav-link" to="/cliente/perfilDeCliente">
@@ -51,11 +53,14 @@ export const NavBar = () => {
                 >
                   Opciones
                 </a>
-                <ul class="dropdown-menu actions" aria-labelledby="navbarDropdown">
+                <ul
+                  class="dropdown-menu actions"
+                  aria-labelledby="navbarDropdown"
+                >
                   <li>
-                    <a class="dropdown-item" href="#">
-                      Ver entrenadores
-                    </a>
+                    <Link class="dropdown-item" to="/cliente/verGimnasios">
+                      Ver gimnasios
+                    </Link>
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">
@@ -66,18 +71,16 @@ export const NavBar = () => {
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <Link class="dropdown-item" to="/login">
                       Cerrar sesión
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
             </ul>
-            
-          </div></div>
-
-          
+          </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   );
 };

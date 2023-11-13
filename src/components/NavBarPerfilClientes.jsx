@@ -1,5 +1,6 @@
 import React from "react";
 import miImagen from '../img/logo.png'
+import { Link } from "react-router-dom";
 
 export const NavBarPerfilCLientes = () => {
   return (
@@ -7,24 +8,24 @@ export const NavBarPerfilCLientes = () => {
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <div className="d-flex">
-            <a class="navbar-brand" href="#">
+            <Link class="navbar-brand" to="/cliente">
             <img className="logo" src={miImagen} alt="logo"/>
             Fit life web
-          </a>
+          </Link>
           
             </div>
          
             <div><div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="">
+                <Link class="nav-link active" aria-current="page" to="/cliente/verGimnasios">
                   Inicio
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link class="nav-link" to="#">
                   Mensajes
-                </a>
+                </Link>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -39,22 +40,22 @@ export const NavBarPerfilCLientes = () => {
                 </a>
                 <ul class="dropdown-menu actions" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <Link class="dropdown-item" to="/cliente/verEntrenadores">
                       Ver entrenadores
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <Link class="dropdown-item" to="/cliente/verGimnasios">
                       Ver gimnasios
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <Link class="dropdown-item" to="/login">
                       Cerrar sesión
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>

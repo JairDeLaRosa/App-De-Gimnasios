@@ -1,5 +1,6 @@
 import React from 'react'
 import miImage from '../img/ImagenPerfil.jpg'
+import { Link } from 'react-router-dom'
 
 export const CardPerfil = () => {
     const imc=(altura, peso)=>{
@@ -37,9 +38,9 @@ export const CardPerfil = () => {
 
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">
+          <Link to="/cliente/perfilDeCliente/editarCaracteristicas" class="card-link">
             Editar caracteristicas
-          </a>
+          </Link>
         </div>
       </div>
     </>

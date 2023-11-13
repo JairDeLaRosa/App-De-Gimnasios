@@ -5,10 +5,11 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export const RegistroUsuarioComun = () => {
-  const navigate=useNavigate()
-  const nagigateLogin=()=> navigate('/login')
+  const navigate = useNavigate();
+  const nagigateLogin = () => navigate("/login");
   const [dataUsuario, setDataUsuario] = useState();
   const [dataCliente, setDataCliente] = useState();
+  const [validation, setvalidation] = useState(0);
 
   const [display1, setDisplay1] = useState("");
   const [display2, setDisplay2] = useState("d-none");
@@ -27,14 +28,28 @@ export const RegistroUsuarioComun = () => {
       .then(function (respuesta) {
         console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
         // Aquí puedes manejar la respuesta del servidor
-        alert("Usuario registrado")
-        nagigateLogin()
+        setvalidation(validation + 1);
       })
       .catch(function (error) {
         console.error("Error al realizar la solicitud:", error);
         // Manejo de errores en caso de que la solicitud falle
-        alert("Ocurrió un error, intenta de nuevo")
-
+        alert("Ocurrió un error, intenta de nuevo");
+      });
+    axios
+      .post("http://localhost:8080/api/usuarios/create", d)
+      .then(function (respuesta) {
+        console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
+        // Aquí puedes manejar la respuesta del servidor
+        setvalidation(validation + 1);
+        if (validation === 2) {
+          alert("Usuario registrado correctamente");
+          nagigateLogin();
+        }
+      })
+      .catch(function (error) {
+        console.error("Error al realizar la solicitud:", error);
+        // Manejo de errores en caso de que la solicitud falle
+        alert("Ocurrió un error, intenta de nuevo");
       });
   };
 
@@ -62,18 +77,18 @@ export const RegistroUsuarioComun = () => {
             <br />
             <form onSubmit={handleSubmit(custonSubmit)}>
               <div className="row">
-                <input type="file" className="file" />
+                <input class="form-control file" type="file" id="formFile" />
               </div>
               <br />
               <div className="row">
                 <div class="col">
                   <label for="exampleFormControlInput1" class="form-label">
-                    Enter weight
+                    Ingresar peso en kilogramos
                   </label>
                   <input
                     type="number"
                     class="form-control"
-                    placeholder="Weight"
+                    placeholder="Peso"
                     aria-label="name"
                     step={0.01}
                     {...register("peso", {
@@ -86,12 +101,12 @@ export const RegistroUsuarioComun = () => {
                 </div>
                 <div class="col">
                   <label for="exampleFormControlInput1" class="form-label">
-                    Enter height
+                    Ingresar altura en metros
                   </label>
                   <input
                     type="number"
                     class="form-control"
-                    placeholder="Height"
+                    placeholder="Altura"
                     aria-label="name"
                     step={0.01}
                     {...register("Altura", {
@@ -105,7 +120,7 @@ export const RegistroUsuarioComun = () => {
                 <div class="col">
                   <br />
                   <button type="submit" class="btn btn-primary mt-2">
-                    Register
+                    Registrar
                   </button>
                 </div>
               </div>

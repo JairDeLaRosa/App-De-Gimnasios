@@ -1,5 +1,6 @@
 import React from "react";
 import miImage from '../img/Imagen_fondo4.jpg'
+import { Link } from "react-router-dom";
 
 export const CardGimnasio = () => {
   return (
@@ -17,9 +18,9 @@ export const CardGimnasio = () => {
           <li class="list-group-item">Horarios: </li>          
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">
+          <Link to="/cliente/verGimnasios/comprarMembresia" class="card-link">
             Comprar membresía
-          </a>
+          </Link>
         </div>
       </div>
     </>

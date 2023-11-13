@@ -1,6 +1,6 @@
-import React from 'react'
-import {RegistroUsuarios} from './../../../components/RegistroUsuarios'
-import { useState } from 'react'
+import React from "react";
+import { RegistroUsuarios } from "./../../../components/RegistroUsuarios";
+import { useState } from "react";
 export const RegistroGerenteDeGym = () => {
   const [data, setData] = useState();
   const [display1, setDisplay1] = useState("");
@@ -20,57 +20,81 @@ export const RegistroGerenteDeGym = () => {
           <div className="contenedor-formulario animate__animated animate__fadeIn">
             <h2>Registro de Gimnasio</h2>
             <form>
-              <div className='row'>
-              <div className='col'>
-                <label for="exampleFormControlTextarea1" class="form-label">
+              <div className="row">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
                     Ingrese nombre del Gimnasio
                   </label>
-                <input className='form-control' type="text" />
+                  <input className="form-control" type="text" />
                 </div>
-                <div className='col'>
-                <label for="exampleFormControlTextarea1" class="form-label">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
                     Ingrese horade ingreso regular
                   </label>
-                <input className='form-control' type="time" />
+                  <input className="form-control" type="time" />
                 </div>
-                <div className='col'>
-                <label for="exampleFormControlTextarea1" class="form-label">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
                     Ingrese hora de salida regular
                   </label>
-                <input className='form-control' type="time" />
+                  <input className="form-control" type="time" />
                 </div>
               </div>
               <br />
               <div className="row">
-              <div className='col'>
-                <label for="exampleFormControlTextarea1" class="form-label">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
                     Ingrese costo diario del Gimnasio
                   </label>
-                <input className='form-control' type="text" />
+                  <input className="form-control" type="text" />
                 </div>
-                <div className='col'>
-                <label for="exampleFormControlTextarea1" class="form-label">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
                     Ingrese costo membresia mensual
                   </label>
-                <input className='form-control' type="text" />
+                  <input className="form-control" type="text" />
                 </div>
-                <div className='col'>
-                <label for="exampleFormControlTextarea1" class="form-label">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
                     Ingrese NIT del GYM
                   </label>
-                <input className='form-control' type="text" />
+                  <input className="form-control" type="text" />
                 </div>
-                <br /> 
-                <div className="row">
-                <label for="exampleFormControlTextarea1" class="form-label">
-                    Ingrese imagen del gym
-                  </label>
-                <input type="file" className="file" />
+                <br />
               </div>
+              <br />
+              <div className="row">
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
+                    Ingrese ciudad del gimnasio
+                  </label>
+                  <input className="form-control" type="text" />
+                </div>
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
+                    Ingrese barrio del gimnasio
+                  </label>
+                  <input className="form-control" type="text" />
+                </div>
+                <div className="col">
+                  <label for="exampleFormControlTextarea1" class="form-label">
+                    Ingrese dirección del gimnasio
+                  </label>
+                  <input className="form-control" type="text" />
+                </div>
+              </div>
+              <br />
+              <div className="row">
+                <div className="col">
+                  <label for="formFile" class="form-label">
+                    Ingrese logo del gimnasio
+                  </label>
+                  <input class="form-control" type="file" id="formFile" />
+                </div>
+                <div className="col"></div>
                 <div class="col">
-                  <br />
                   <button type="submit" class="btn btn-primary mt-2">
-                    Register
+                    Registrar
                   </button>
                 </div>
               </div>
@@ -80,4 +104,4 @@ export const RegistroGerenteDeGym = () => {
       </div>
     </>
   );
-}
+};

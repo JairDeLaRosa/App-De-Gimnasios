@@ -207,7 +207,7 @@ export const RegistroUsuarios = ({tipoRegistro, data}) => {
             <div class="col submit">
               <br />
               <button type="submit" class="btn btn-primary col-5 mt-2 next">
-                Next
+                Siguiente
               </button>
             </div>
           </div>

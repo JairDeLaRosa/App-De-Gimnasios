@@ -4,8 +4,6 @@ import { NavBarPerfilCLientes } from '../../../components/NavBarPerfilClientes'
 import { CardPerfil } from '../../../components/CardPerfil'
 import { CardEntrenadorConntratado } from '../../../components/CardEntrenadorConntratado'
 import miImage from '../../../img/Imagen_fondo4.jpg'
-import miImage2 from '../../../img/Imagen_fondo.jpg'
-
 export const PerfilDeCliente = () => {
   return (
     <>

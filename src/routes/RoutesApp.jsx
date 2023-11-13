@@ -11,8 +11,9 @@ import { MenuDeGimnasios } from '../pages/menus/menusGimnasios/MenuDeGimnasios'
 import { VerGimnasios } from '../pages/menus/menusClientes/VerGimnasios'
 import { PerfilDeCliente } from '../pages/menus/menusClientes/PerfilDeCliente'
 import { VerEntrenadores } from '../pages/menus/menusClientes/VerEntrenadores'
-
-
+import { ComprarMembresíaGimnasios } from '../pages/menus/menusClientes/ComprarMembresíaGimnasios'
+import { EditarCaracteristicas } from '../pages/menus/menusClientes/EditarCaracteristicas'
+import { Mensajeria } from '../pages/Mensajeria'
 export const RoutesApp = () => {
   return (
     <Routes>
@@ -23,8 +24,12 @@ export const RoutesApp = () => {
 
         <Route path='cliente' element={<MenuDeClientes/>}/>
         <Route path='cliente/verGimnasios' element={<VerGimnasios/>}/>
+        <Route path='cliente/verGimnasios/comprarMembresia' element={<ComprarMembresíaGimnasios/>}/>
         <Route path='cliente/verEntrenadores' element={<VerEntrenadores/>}/>        
         <Route path='cliente/perfilDeCliente' element={<PerfilDeCliente/>}/>
+        <Route path='cliente/perfilDeCliente/editarCaracteristicas' element={<EditarCaracteristicas/>}/>
+
+        <Route path='mensajeria' element={<Mensajeria/>}/>
         
 
         <Route path='entrenador' element={<MenuDeEntrenador/>}/>
