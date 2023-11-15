@@ -1,22 +1,22 @@
 import React from 'react'
 import miImage from '../img/Imagen_fondo.jpg'
 
-export const CardEntrenadores = () => {
+export const CardEntrenadores = ({nombre, apellido, descripcion, fechaDeNacimiento, especialidad, celular, costo}) => {
   return (
     <>
       <div class="card styleCard">
         <img src={miImage} class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Alberto Manjarrez</h5>
+          <h5 class="card-title">{`${nombre} ${apellido}`}</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {descripcion}
           </p>
-          <p className='card-text'>Edad: </p>
+          <p className='card-text'>Fecha de nacimiento: {fechaDeNacimiento}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Especialidad: </li>
-          <li class="list-group-item">Numero de contacto: +57 3008021971 </li>
+          <li class="list-group-item">Especialidad: {especialidad}</li>
+          <li class="list-group-item">Costo mensual: {costo}</li>
+          <li class="list-group-item">Numero de contacto: +57 {celular} </li>
         </ul>
         <div class="card-body">
           <a href="#" class="card-link">

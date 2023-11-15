@@ -1,12 +1,43 @@
 import React from 'react'
 import '../../../css/menus.css'
 import { useNavigate } from "react-router-dom";
+import Cookies from 'universal-cookie';
+import axios from 'axios';
 
 export const MenuDeClientes = () => {
+  const cookies= new Cookies()
+
+  axios
+      .get("http://localhost:8080/api/entrenadores/list")
+      .then(function (respuesta) {
+        console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
+        cookies.set('entrenadores',respuesta.data, {path: "/"})
+        // Aquí puedes manejar la respuesta del servidor
+      })
+      .catch(function (error) {
+        console.error("Error al realizar la solicitud:", error);
+        // Manejo de errores en caso de que la solicitud falle
+        alert("Ocurrió un error, intenta de nuevo");
+      });
+      
+      axios
+      .get("http://localhost:8080/api/gimnasios/list")
+      .then(function (respuesta) {
+        console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
+        cookies.set('gimnasios',respuesta.data, {path: "/"})
+        // Aquí puedes manejar la respuesta del servidor
+      })
+      .catch(function (error) {
+        console.error("Error al realizar la solicitud:", error);
+        // Manejo de errores en caso de que la solicitud falle
+        alert("Ocurrió un error, intenta de nuevo");
+      });  
+
   const navigate=useNavigate()
   const VerPerfil=()=>navigate('/cliente/perfilDeCliente')
   const VerEntrenadores=()=>navigate('/cliente/verEntrenadores')
   const VerGimnasios=()=>navigate('/cliente/verGimnasios')
+
 return (
   <>
     <div className="container-menu-cliente">

@@ -4,14 +4,17 @@ import { NavBarPerfilCLientes } from '../../../components/NavBarPerfilClientes'
 import { CardPerfil } from '../../../components/CardPerfil'
 import { CardEntrenadorConntratado } from '../../../components/CardEntrenadorConntratado'
 import miImage from '../../../img/Imagen_fondo4.jpg'
+import Cookies from 'universal-cookie'
 export const PerfilDeCliente = () => {
+  const cookies=new Cookies()
+  
   return (
     <>
     <div className='container-menu-ver'>
     </div>
-    <NavBarPerfilCLientes/>
+    <NavBarPerfilCLientes />
     <div className='cardPerfil'>
-        <CardPerfil/>
+        <CardPerfil nombres={cookies.get('nombres')} apellidos={cookies.get('apellidos')} altura={cookies.get('altura')} fechaDeNacimiento={cookies.get('fechaDeNacimiento')} peso={cookies.get('peso')}/>
     </div>
     <div className='containerEntrenadores'>
         <br />

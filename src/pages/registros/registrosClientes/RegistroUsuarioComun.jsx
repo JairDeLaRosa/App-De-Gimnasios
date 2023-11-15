@@ -7,9 +7,8 @@ import { useNavigate } from "react-router-dom";
 export const RegistroUsuarioComun = () => {
   const navigate = useNavigate();
   const nagigateLogin = () => navigate("/login");
-  const [dataUsuario, setDataUsuario] = useState();
   const [dataCliente, setDataCliente] = useState();
-  const [validation, setvalidation] = useState(0);
+  const [id, setIdCliente] = useState();
 
   const [display1, setDisplay1] = useState("");
   const [display2, setDisplay2] = useState("d-none");
@@ -20,31 +19,19 @@ export const RegistroUsuarioComun = () => {
   } = useForm();
 
   const custonSubmit = (d) => {
-    // Peso: d.peso,
-    // Altura: d.Altura})
-    console.log(dataUsuario);
+    console.log(dataCliente);
+    console.log({ idCliente: id, ...d });
+
     axios
-      .post("http://localhost:8080/api/usuarios/create", dataUsuario)
-      .then(function (respuesta) {
-        console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
-        // Aquí puedes manejar la respuesta del servidor
-        setvalidation(validation + 1);
+      .post("http://localhost:8080/api/clientes/create", {
+        idUsuario: id,
+        ...d,
       })
-      .catch(function (error) {
-        console.error("Error al realizar la solicitud:", error);
-        // Manejo de errores en caso de que la solicitud falle
-        alert("Ocurrió un error, intenta de nuevo");
-      });
-    axios
-      .post("http://localhost:8080/api/usuarios/create", d)
       .then(function (respuesta) {
         console.log("Solicitud exitosa. Respuesta del servidor:", respuesta);
         // Aquí puedes manejar la respuesta del servidor
-        setvalidation(validation + 1);
-        if (validation === 2) {
-          alert("Usuario registrado correctamente");
-          nagigateLogin();
-        }
+        alert("Usuario registrado correctamente");
+        nagigateLogin();
       })
       .catch(function (error) {
         console.error("Error al realizar la solicitud:", error);
@@ -54,7 +41,7 @@ export const RegistroUsuarioComun = () => {
   };
 
   const registerData = (d) => {
-    setDataUsuario(d);
+    setDataCliente({ Correo: d.correo, Contraseña: d.contraseña });
     setDisplay1("d-none");
     setDisplay2("");
   };
@@ -62,7 +49,7 @@ export const RegistroUsuarioComun = () => {
     <>
       <div className="container-registrar">
         <div className={display1}>
-          <RegistroUsuarios tipoRegistro={"Cliente"} data={registerData} />
+          <RegistroUsuarios tipoRegistro={"Cliente"} data={registerData} setId={setIdCliente} />
         </div>
         <div className={display2}>
           <div className="contenedor-formulario animate__animated animate__fadeIn">
@@ -109,7 +96,7 @@ export const RegistroUsuarioComun = () => {
                     placeholder="Altura"
                     aria-label="name"
                     step={0.01}
-                    {...register("Altura", {
+                    {...register("altura", {
                       required: {
                         value: true,
                         message: "Este campo no puede estar vacio",

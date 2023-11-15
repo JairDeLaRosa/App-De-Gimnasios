@@ -3,6 +3,8 @@ import miImagen from '../img/logo.png'
 import { Link } from "react-router-dom";
 
 export const NavBarPerfilCLientes = () => {
+
+
   return (
     
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
