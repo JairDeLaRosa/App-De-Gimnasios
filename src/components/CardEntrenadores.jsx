@@ -8,6 +8,7 @@ export const CardEntrenadores = ({nombre, apellido, descripcion, fechaDeNacimien
         <img src={miImage} class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{`${nombre} ${apellido}`}</h5>
+          <br />
           <p class="card-text">
             {descripcion}
           </p>

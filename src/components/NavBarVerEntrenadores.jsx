@@ -2,7 +2,14 @@ import React from "react";
 import miImagen from "../img/logo.png";
 import { Link } from "react-router-dom";
 
-export const NavBarVerEntrenadores = () => {
+export const NavBarVerEntrenadores = ({busquedaPorEspecialidad}) => {
+  const customChange=({target})=>{
+    if (target.value.length >= 2) {
+      busquedaPorEspecialidad(target.value);
+    } else {
+      busquedaPorEspecialidad("");
+    }
+  }
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -16,12 +23,13 @@ export const NavBarVerEntrenadores = () => {
               <input
                 class="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Buscar por especialidad"
                 aria-label="Search"
+                onChange={customChange}
               />
-              <button class="btn btn-outline-success" type="submit">
+              <div class="btn btn-outline-success" type="submit">
                 Search
-              </button>
+              </div>
             </form>
           </div>
         </div>

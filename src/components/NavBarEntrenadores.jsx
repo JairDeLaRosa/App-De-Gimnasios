@@ -1,5 +1,6 @@
 import React from 'react'
 import miImagen from '../img/logo.png'
+import { Link } from 'react-router-dom'
 
 export const NavBarEntrenadores = () => {
   return (
@@ -26,9 +27,9 @@ export const NavBarEntrenadores = () => {
             </a>
           </li>
           <li class="nav-item dropdown">
-          <a class="nav-link" href="#">
+          <Link class="nav-link" to="/login">
               Cerrar sesión
-            </a>
+            </Link>
           </li>
         </ul>
         

@@ -12,6 +12,8 @@ export const Login = () => {
   const [alert, setAlert] = useState("alert alert-warning row d-none");
   const navigate = useNavigate();
   const menuClientes = () => navigate("/cliente");
+  const menuEntrenadores=()=> navigate("/entrenador")
+  const menuGimnasios=()=> navigate("/gimnasio")
   const {
     register,
     formState: { errors },
@@ -79,6 +81,10 @@ export const Login = () => {
                 // Manejo de errores en caso de que la solicitud falle
                 alert("Ocurrió un error, intenta de nuevo");
               });
+          }else if(respuesta.data.tipoUsuario === "Entrenadores"){
+            menuEntrenadores()
+          }else if(respuesta.data.tipoUsuario === "Gerente de gym"){
+            menuGimnasios()
           }
         } else {
           setAlert("alert alert-warning row");
